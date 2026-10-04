@@ -1,0 +1,45 @@
+# Security Reports Directory
+
+This directory contains security audit reports.
+
+## Report Template
+
+```markdown
+# Security Report
+
+**Date:** YYYY-MM-DD
+**Auditor:** [Agent/Tool]
+**Scope:** [What was reviewed]
+
+## Findings
+
+### [SEVERITY] Finding Title
+
+**Location:** File:line
+**Description:** [What was found]
+**Risk:** [Potential impact]
+**Recommendation:** [How to fix]
+**Status:** Open/Fixed/Accepted
+
+## Summary
+
+- Critical: X
+- High: X
+- Medium: X
+- Low: X
+
+## Next Steps
+
+[Actions required]
+```
+
+## Severity Levels
+
+- **Critical:** Immediate exploitation possible, severe impact
+- **High:** Significant vulnerability, requires immediate attention
+- **Medium:** Potential issue, evaluate context
+- **Low:** Minor concern or theoretical issue
+
+## Access
+
+Security reports must NOT be automatically exposed publicly.

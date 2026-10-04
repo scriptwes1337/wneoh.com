@@ -1,0 +1,56 @@
+# Plans Directory
+
+This directory contains implementation plans for substantial features.
+
+Create a plan when work is:
+- Multi-step and complex
+- Architectural in nature
+- Risky or cross-cutting
+- Difficult to reverse
+- Security sensitive
+- A major new feature
+- A substantial redesign
+- A schema change
+- An auth or payment change
+- A major integration
+- A public API change
+
+## Plan Template
+
+```markdown
+# Plan: [Feature Name]
+
+## Goal
+[What we're trying to accomplish]
+
+## Scope
+[What's included and excluded]
+
+## Approach
+[How we'll implement it]
+
+## Files / Systems Affected
+[List of files and systems that will be modified]
+
+## Risks
+[Potential risks and mitigations]
+
+## Testing
+[Testing strategy]
+
+## Security Considerations
+[Security implications]
+
+## Validation
+[How we'll verify completion]
+
+## Status
+[Current status: Draft / In Progress / Complete / Blocked]
+```
+
+## Guidelines
+
+- Plans are operational artifacts, not bureaucracy
+- Keep plans concise but useful
+- Update plan status as work progresses
+- Archive completed plans or remove them
