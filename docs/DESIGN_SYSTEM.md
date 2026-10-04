@@ -13,6 +13,6 @@ Editorial, sparse and personal. Typography, photography and whitespace provide t
 
 ## Patterns
 
-Supplied transparent geometric logo appears once in the navigation. Light/dark mode adapts its color using CSS inversion. Image frames are square-edged. Editorial cards have no enclosing border or shadow. When only one article is published, it uses a wide two-column feature layout on desktop and stacks vertically on mobile. The archive uses horizontal rules. Social profiles use rectangular 1px borders. Contact placeholders are plain non-interactive text until URLs are confirmed.
+Supplied transparent geometric logo appears once in the navigation. Light/dark mode adapts its color using CSS inversion. Image frames are square-edged. The homepage portrait keeps its square framing and natural color at every breakpoint, with the full head-and-shoulders composition visible. Editorial cards have no enclosing border or shadow. When only one article is published, it uses a wide two-column feature layout on desktop and stacks vertically on mobile. The archive uses horizontal rules. Social profiles use rectangular 1px borders. Contact placeholders are plain non-interactive text until URLs are confirmed.
 
 Arrows translate 3px on hover; images scale to 1.02. Transitions are 200–300ms and disabled for reduced motion. Interactive controls have visible focus and at least 44px targets. Mobile preserves the introduction next to its image in reading order, then stacks the writing entries.

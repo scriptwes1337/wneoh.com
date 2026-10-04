@@ -27,7 +27,7 @@ Copy images to `public/images`. Required fields are validated at build time. Dra
 
 ## Assets and profiles
 
-Edit `src/lib/site.ts` to add confirmed social URLs, email and a personal portrait. The supplied logo is already included. The city photograph is a temporary Unsplash image (`photo-1525625293386-3f8f99389edd`); editorial thumbnails are original SVG illustrations. Contact information is intentionally placeholder text at the user's request. `/dev` exposes repository documentation in development only.
+Edit `src/lib/site.ts` to add confirmed social URLs or email. The supplied logo and the approved square head-and-shoulders portrait are included. The homepage uses `public/images/wellesley-neoh-portrait-v1.png`; editorial thumbnails are original SVG illustrations. Contact information is intentionally placeholder text at the user's request. `/dev` exposes repository documentation in development only.
 
 Product requirements, design tokens, architecture and security notes live in `docs/`.
 

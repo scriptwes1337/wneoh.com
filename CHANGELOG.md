@@ -3,12 +3,14 @@
 ## 2026-10-04
 
 ### Added
+- Prepared a square head-and-shoulders profile portrait from the user's supplied photograph at `public/images/wellesley-neoh-portrait-v1.png`.
 - Wellesley Neoh editorial homepage, chronological writing archive and readable article pages.
 - Validated Markdown publishing, draft/future/sample filtering, RSS, sitemap, metadata and branded Open Graph image.
 - Supplied geometric logo, responsive imagery, keyboard access, reduced motion and persisted light/dark themes.
 - Labeled development sample articles and contact placeholders.
 
 ### Changed
+- Replaced the temporary homepage city image with the approved profile portrait, square framing, natural color and updated accessible description/caption.
 - Published through GitHub and Vercel, connected Cloudflare DNS for wneoh.com, and configured a permanent www-to-apex redirect while preserving mail records.
 - Replaced the three sample posts with “I’m beginning to agentify my workflows,” dated 4 October 2026, on the homepage, archive, article route, RSS and sitemap.
 - Updated preview and production reader tests for the first real article.

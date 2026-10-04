@@ -14,7 +14,7 @@
 - `src/lib/site.ts`: identity, logo, portrait and contact configuration.
 - `src/lib/writing.ts`: validated Markdown content adapter and publication rules.
 - `content/writing/`: trusted Markdown articles with frontmatter.
-- `public/images/`: local brand mark, temporary city photograph and editorial illustrations.
+- `public/images/`: local brand mark, approved profile portrait and editorial illustrations.
 - `docs/`: current requirements, architecture, design and security documentation.
 - `e2e/`, `e2e-production/`: preview reader journeys and production regressions.
 - `security-reports/`: audit findings, never exposed through public routes.
@@ -29,7 +29,7 @@ Set `PLAYWRIGHT_BASE_URL` to check an existing preview at a different port. Prod
 
 Use `@/*` imports. Public pages are server components; theme switching is a client component. Write articles in Markdown, not executable MDX. Required frontmatter is title, date, description, image, slug and draft. Optional imageAlt and sample fields provide accessibility and preview labels. Drafts and future posts remain unpublished. Development samples never enter production, RSS or sitemap. Publishing requires a rebuild.
 
-Use the supplied geometric logo. Contact details stay placeholders until confirmed. The hero currently uses a temporary Singapore photograph pending a personal portrait. Read `docs/PRD.md` before changing scope or introducing new sections.
+Use the supplied geometric logo. Contact details stay placeholders until confirmed. The hero uses the approved square head-and-shoulders profile portrait. Read `docs/PRD.md` before changing scope or introducing new sections.
 
 ## Release status
 

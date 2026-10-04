@@ -4,11 +4,10 @@ export const site = {
   url: "https://wneoh.com",
   description:
     "Technology entrepreneur based in Singapore. I build software, internet businesses, and media projects, and write about technology, business, media, and current affairs in Singapore.",
-  // Replace the temporary city photograph when a personal portrait is available.
   logo: "/images/wellesley-neoh-logo.png",
-  portrait: "/images/singapore.jpg",
-  portraitAlt: "Singapore skyline and the waterfront at Marina Bay",
-  portraitCaption: "Singapore — home, and a point of view.",
+  portrait: "/images/wellesley-neoh-portrait-v1.png",
+  portraitAlt: "Portrait of Wellesley Neoh wearing glasses and a dark suit",
+  portraitCaption: "Wellesley Neoh · Singapore",
 };
 
 // Only confirmed URLs should appear here. Empty URLs render as preview text.

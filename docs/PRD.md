@@ -32,7 +32,7 @@ Separate About, Projects, Experience, Services, Contact, Ventures or Portfolio p
 - The project-root PNG supplied by the user is the primary logo.
 - Contact information remains placeholder text until confirmed URLs and email are supplied.
 - The user requested replacing the three preview samples with a first-person post about embracing AI and beginning to agentify workflows. The initial article is dated 2026-10-04 and is available in local preview and production builds.
-- A temporary Singapore photograph occupies the portrait position. The user authorized deploying the current site; a personal portrait can replace this image later.
+- The homepage uses the approved square profile portrait prepared from the user’s supplied photograph.
 - The article was drafted from the user’s stated direction; it avoids invented past experiences, tools, metrics and outcomes.
 
 ## Acceptance and release criteria

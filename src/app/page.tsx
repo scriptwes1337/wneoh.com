@@ -50,7 +50,7 @@ export default function Home() {
             </div>
             <figcaption>
               <span>{site.portraitCaption}</span>
-              <span>01 / SINGAPORE</span>
+              <span>01 / PORTRAIT</span>
             </figcaption>
           </figure>
         </section>

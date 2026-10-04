@@ -200,13 +200,12 @@ button {
 }
 .hero-photo {
   position: relative;
-  aspect-ratio: 1/1.11;
+  aspect-ratio: 1;
   overflow: hidden;
   background: var(--muted);
 }
 .hero-photo img {
   object-fit: cover;
-  filter: saturate(0.65);
   object-position: 50% 50%;
 }
 .hero-figure figcaption {
@@ -604,7 +603,7 @@ a:hover .article-image img {
     font-size: 14px;
   }
   .hero-photo {
-    aspect-ratio: 1/1.3;
+    aspect-ratio: 1;
   }
   .article-card h3 {
     font-size: 20px;
@@ -650,7 +649,7 @@ a:hover .article-image img {
     font-size: 15px;
   }
   .hero-photo {
-    aspect-ratio: 1.15;
+    aspect-ratio: 1;
   }
   .hero-figure figcaption {
     font-size: 9px;
