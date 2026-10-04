@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-10-04
+
+### Added
+- Wellesley Neoh editorial homepage, chronological writing archive and readable article pages.
+- Validated Markdown publishing, draft/future/sample filtering, RSS, sitemap, metadata and branded Open Graph image.
+- Supplied geometric logo, responsive imagery, keyboard access, reduced motion and persisted light/dark themes.
+- Labeled development sample articles and contact placeholders.
+
+### Changed
+- Replaced the three sample posts with “I’m beginning to agentify my workflows,” dated 4 October 2026, on the homepage, archive, article route, RSS and sitemap.
+- Updated preview and production reader tests for the first real article.
+- Added a wide editorial feature layout when the homepage has a single published article.
+
+### Security
+- Escaped Markdown HTML, restricted links and local images, XML-escaped feeds, production protection for developer docs, and security response headers.
+- Prevented developer documentation from leaking into serialized 404 response payloads, with a production regression test.
+- Updated framework and test dependencies for security fixes.
+- Removed the unused shadcn CLI and stylesheet import; replaced Next lint glob matching with a tested tinyglobby adapter to eliminate the braces dependency chain.
+
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).

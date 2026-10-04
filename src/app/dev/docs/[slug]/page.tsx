@@ -1,36 +1,39 @@
-import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import { marked } from 'marked'
-import { getDocBySlug, getDocContent, docs } from '@/lib/docs'
-import { ChevronLeft } from 'lucide-react'
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { marked } from "marked";
+import { getDocBySlug, getDocContent, docs } from "@/lib/docs";
+import { ChevronLeft } from "lucide-react";
 
 interface PageProps {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
+  if (process.env.NODE_ENV === "production") return [];
   return docs.map((doc) => ({
     slug: doc.slug,
-  }))
+  }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params
-  const doc = getDocBySlug(slug)
-  if (!doc) return { title: 'Not Found' }
-  return { title: `${doc.title} | Documentation` }
+  if (process.env.NODE_ENV === "production") notFound();
+  const { slug } = await params;
+  const doc = getDocBySlug(slug);
+  if (!doc) return { title: "Not Found" };
+  return { title: `${doc.title} | Documentation` };
 }
 
 export default async function DocPage({ params }: PageProps) {
-  const { slug } = await params
-  const doc = getDocBySlug(slug)
+  if (process.env.NODE_ENV === "production") notFound();
+  const { slug } = await params;
+  const doc = getDocBySlug(slug);
 
   if (!doc) {
-    notFound()
+    notFound();
   }
 
-  const content = getDocContent(doc.filePath)
-  const html = await marked(content)
+  const content = getDocContent(doc.filePath);
+  const html = await marked(content);
 
   return (
     <div className="min-h-screen">
@@ -54,5 +57,5 @@ export default async function DocPage({ params }: PageProps) {
         </article>
       </main>
     </div>
-  )
+  );
 }

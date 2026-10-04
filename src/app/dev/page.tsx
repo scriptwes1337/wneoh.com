@@ -1,23 +1,34 @@
-import Link from 'next/link'
-import { docs } from '@/lib/docs'
-import { FileText, GitBranch, Shield, Palette, Server, Layers } from 'lucide-react'
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { docs } from "@/lib/docs";
+import {
+  FileText,
+  GitBranch,
+  Shield,
+  Palette,
+  Server,
+  Layers,
+} from "lucide-react";
 
 const icons = {
   prd: FileText,
   architecture: Server,
-  'design-system': Palette,
+  "design-system": Palette,
   security: Shield,
   mcp: Server,
-  'react-grab': Layers,
+  "react-grab": Layers,
   changelog: GitBranch,
-}
+};
 
 export default function DevPage() {
+  if (process.env.NODE_ENV === "production") notFound();
   return (
     <div className="min-h-screen">
       <div className="border-b">
         <div className="container mx-auto px-6 py-8">
-          <h1 className="text-3xl font-semibold tracking-tight">Documentation</h1>
+          <h1 className="text-3xl font-semibold tracking-tight">
+            Documentation
+          </h1>
           <p className="mt-2 text-muted-foreground">
             Internal development documentation and project context
           </p>
@@ -27,7 +38,7 @@ export default function DevPage() {
       <div className="container mx-auto px-6 py-8">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {docs.map((doc) => {
-            const Icon = icons[doc.slug as keyof typeof icons] || FileText
+            const Icon = icons[doc.slug as keyof typeof icons] || FileText;
             return (
               <Link
                 key={doc.slug}
@@ -46,23 +57,27 @@ export default function DevPage() {
                   </div>
                 </div>
               </Link>
-            )
+            );
           })}
         </div>
 
         <div className="mt-12 rounded-lg border bg-muted/30 p-6">
           <h2 className="font-medium">About This Interface</h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            This documentation interface renders Markdown files directly from the repository.
-            It provides a browsable view of project documentation including requirements,
-            architecture, design system, and security documentation.
+            This documentation interface renders Markdown files directly from
+            the repository. It provides a browsable view of project
+            documentation including requirements, architecture, design system,
+            and security documentation.
           </p>
           <p className="mt-4 text-sm text-muted-foreground">
-            The documentation is stored in the <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">docs/</code> directory
-            and is intended for development reference only.
+            The documentation is stored in the{" "}
+            <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">
+              docs/
+            </code>{" "}
+            directory and is intended for development reference only.
           </p>
         </div>
       </div>
     </div>
-  )
+  );
 }

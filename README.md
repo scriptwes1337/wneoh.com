@@ -1,128 +1,34 @@
-# Next.js Template
+# wneoh.com
 
-A production-grade agentic development foundation for Next.js applications.
+Wellesley Neoh's personal editorial publication, built with Next.js, TypeScript and Tailwind CSS.
 
-## Overview
+## Run locally
 
-This is a reusable starter repository optimized for:
-- Accurate translation of requirements into working software
-- Test-driven development with meaningful coverage
-- Living documentation synchronized with implementation
-- Security auditing and pre-push quality gates
-- Responsive, accessible UI with systematic design
+Use Node.js 24. Install with `npm ci`, then `npm run dev` and open the URL shown by Next.js. `npm run build` and `npm run start` run the production site. `npm run pre-push` runs unit tests, typecheck, lint, build and dependency audit. `npm run test:e2e` checks reader journeys and responsive layouts. `npm run test:production` builds and verifies production publishing and developer-route protection. Set `PLAYWRIGHT_BASE_URL` to test an existing server on another port.
 
-## Stack
+## Publish writing
 
-- **Framework:** Next.js 16.x (App Router)
-- **Language:** TypeScript 5
-- **Styling:** Tailwind CSS 4
-- **Components:** shadcn/ui (Base UI)
-- **Icons:** lucide-react
-- **Package Manager:** npm
+Add `content/writing/your-slug.md`:
 
-## Getting Started
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Open http://localhost:3000
+```markdown
+---
+title: Your headline
+date: 2026-10-04
+description: A short introduction.
+image: /images/your-image.jpg
+imageAlt: Describe the image when it adds meaning.
+slug: your-slug
+draft: false
+---
+Your Markdown article body.
 ```
 
-## Commands
+Copy images to `public/images`. Required fields are validated at build time. Drafts and future posts are excluded. Rebuild to publish. Raw HTML is escaped; safe Markdown links, headings, lists, quotes and code are supported. Development sample posts have `sample: true` and never appear in production, RSS or the sitemap. The initial sample posts have been replaced by “I’m beginning to agentify my workflows.”
 
-```bash
-# Development
-npm run dev          # Start development server
+## Assets and profiles
 
-# Testing
-npm run test         # Run unit tests
-npm run test:coverage # Run with coverage
+Edit `src/lib/site.ts` to add confirmed social URLs, email and a personal portrait. The supplied logo is already included. The city photograph is a temporary Unsplash image (`photo-1525625293386-3f8f99389edd`); editorial thumbnails are original SVG illustrations. Contact information is intentionally placeholder text at the user's request. `/dev` exposes repository documentation in development only.
 
-# Quality
-npm run lint         # Run ESLint
-npm run build        # Production build
-```
+Product requirements, design tokens, architecture and security notes live in `docs/`.
 
-## Project Structure
-
-```
-src/
-├── app/             # Next.js App Router
-├── components/      # React components
-│   └── ui/          # shadcn/ui components
-└── lib/             # Utilities
-
-skills/              # Agent skill modules
-docs/                # Project documentation
-plans/               # Implementation plans
-security-reports/    # Security audit reports
-```
-
-## Documentation
-
-- `AGENTS.md` — Agent router and workflow
-- `docs/PRD.md` — Product requirements
-- `docs/ARCHITECTURE.md` — System architecture
-- `docs/DESIGN_SYSTEM.md` — Visual design system
-- `docs/SECURITY.md` — Security architecture
-- `CHANGELOG.md` — Change history
-
-## Agent Workflow
-
-See `AGENTS.md` for the complete agent workflow.
-
-Core workflow:
-1. Understand requirements
-2. Clarify material ambiguities
-3. Follow the PRD
-4. Use TDD for functional behaviour
-5. Validate all modifications
-6. Visually verify UI changes
-7. Update documentation and changelog
-8. Run pre-push security gate
-
-## MCP Configuration
-
-Default MCPs:
-- **Context7** — Current library/framework documentation
-- **Chrome DevTools** — Live frontend debugging
-- **GitHub** — Repository operations
-- **shadcn** — UI component registry
-- **DeepWiki** — Repository internals
-
-Conditional (when applicable):
-- **Vercel** — Deployment
-- **Figma** — Design source
-- **Sentry** — Production errors
-- **Supabase** — Database operations
-
-## Security
-
-See `docs/SECURITY.md` and `skills/security/SKILL.md` for security practices.
-
-Pre-push security gate:
-1. Review pending changes
-2. Run security tools
-3. Classify findings
-4. Fix blocking issues
-5. Re-validate
-
-## Deployment
-
-Deploy to Vercel:
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-```
-
-## License
-
-Private repository. All rights reserved.
+Next's lint directory matcher uses the scoped adapter in `tools/next-lint-glob`, backed by tinyglobby, to avoid the unpatched braces dependency. Integration tests verify directory matching compatibility. The unused shadcn CLI and its CSS import have been removed.

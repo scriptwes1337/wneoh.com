@@ -1,60 +1,93 @@
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Next.js Template',
-  description: 'A production-grade agentic development foundation',
-}
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { site } from "@/lib/site";
+import { getArticles } from "@/lib/writing";
+import {
+  Header,
+  Footer,
+  SocialIcons,
+  Elsewhere,
+} from "@/components/site/shell";
+import { ArticleCard } from "@/components/site/article-card";
 
 export default function Home() {
+  const articles = getArticles().slice(0, 3);
   return (
-    <div className="min-h-screen bg-background">
-      <main className="container mx-auto flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-6 py-12">
-        <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
-          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Next.js Template
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            A production-grade agentic development foundation for Next.js applications.
-          </p>
-          <div className="mt-10 flex items-center gap-4">
-            <a
-              href="/dev"
-              className="rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80"
+    <>
+      <Header />
+      <main id="main">
+        <section className="hero frame">
+          <div className="hero-copy">
+            <div className="eyebrow">
+              <span className="location-dot" /> Singapore · {site.handle}
+            </div>
+            <h1>
+              Wellesley
+              <br />
+              Neoh<span className="period">.</span>
+            </h1>
+            <p className="hero-position">
+              Technology entrepreneur
+              <br className="desktop-break" /> based in Singapore.
+            </p>
+            <p className="hero-description">
+              I build software, internet businesses, and media projects, and
+              write about technology, business, media, and current affairs in
+              Singapore.
+            </p>
+            <SocialIcons />
+          </div>
+          <figure className="hero-figure">
+            <div className="hero-photo">
+              <Image
+                src={site.portrait}
+                alt={site.portraitAlt}
+                fill
+                priority
+                sizes="(max-width: 767px) 100vw, 48vw"
+              />
+            </div>
+            <figcaption>
+              <span>{site.portraitCaption}</span>
+              <span>01 / SINGAPORE</span>
+            </figcaption>
+          </figure>
+        </section>
+        <section className="latest frame">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">Notes & perspectives</span>
+              <h2>
+                Latest writing<span className="period">.</span>
+              </h2>
+            </div>
+            <Link className="text-link" href="/writing">
+              View all posts <ArrowRight size={17} className="arrow" />
+            </Link>
+          </div>
+          {articles.length ? (
+            <div
+              className={`article-grid${articles.length === 1 ? " article-grid-single" : ""}`}
             >
-              View Documentation
-            </a>
-            <a
-              href="https://nextjs.org/docs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg border border-border bg-background px-4 py-2.5 text-sm font-medium transition-colors hover:bg-muted"
-            >
-              Next.js Docs
-            </a>
-          </div>
-        </div>
-
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-lg border bg-card p-6 text-left">
-            <h3 className="font-medium">Agent Router</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Modular skill system for requirements, engineering, testing, design, security, and documentation.
+              {articles.map((article) => (
+                <ArticleCard
+                  key={article.slug}
+                  article={article}
+                  featured={articles.length === 1}
+                />
+              ))}
+            </div>
+          ) : (
+            <p className="empty-writing">
+              New perspectives are on their way.{" "}
+              <Link href="/feed.xml">Follow along via RSS →</Link>
             </p>
-          </div>
-          <div className="rounded-lg border bg-card p-6 text-left">
-            <h3 className="font-medium">Living Documentation</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              PRD, architecture, design system, and security docs that stay synchronized with implementation.
-            </p>
-          </div>
-          <div className="rounded-lg border bg-card p-6 text-left">
-            <h3 className="font-medium">Quality Gates</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              TDD workflow, test coverage, type checking, and security auditing before every push.
-            </p>
-          </div>
-        </div>
+          )}
+        </section>
+        <Elsewhere />
       </main>
-    </div>
-  )
+      <Footer />
+    </>
+  );
 }

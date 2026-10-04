@@ -1,5 +1,6 @@
-import { redirect } from 'next/navigation'
+import { notFound, redirect } from "next/navigation";
 
 export default function DocsPage() {
-  redirect('/dev')
+  if (process.env.NODE_ENV === "production") notFound();
+  redirect("/dev");
 }

@@ -1,96 +1,40 @@
-# Product Requirements Document
+# Product Requirements: wneoh.com
 
-This is a template repository. Product-specific requirements are populated during project initialization.
+## Product and audience
 
-## Template Instructions
+A personal editorial publication for Wellesley Neoh (`wesnks`), a technology entrepreneur based in Singapore. Readers should understand who Wellesley is, explore his writing, and find his public profiles.
 
-When starting a new project from this template:
+## Scope and journeys
 
-1. Replace this document with project-specific requirements
-2. Use the requirements skill (`skills/requirements/SKILL.md`) to conduct the requirements interview
-3. Update this document as requirements evolve
-4. Keep this document synchronized with implementation
+- UI-001: Homepage with the supplied personal mark, a two-column introduction, image, latest three articles, and compact social links.
+- UI-002: `/writing` presents a chronological archive with thumbnails, dates, titles and arrows. No visible category filters.
+- UI-003: `/writing/[slug]` provides a back link, date, headline, editorial image and narrow serif reading column.
+- UI-004: Navigation contains the mark, Writing, Links and an accessible theme toggle. Theme preference persists locally; the system preference is the initial default.
+- CONTENT-001: Markdown files in `content/writing/` use required title, date, description, image, slug and draft frontmatter. Optional imageAlt and sample fields support accessibility and previews.
+- CONTENT-002: Drafts and future posts are hidden. Sample posts are visible in development only, with explicit labels, and never appear in production, RSS or sitemap.
+- SEO-001: Metadata, canonical URLs, branded Open Graph image, favicon, sitemap and RSS are provided.
+- SEC-001: Development documentation returns 404 in production. Markdown raw HTML is escaped and executable links are rejected.
 
-## Document Structure
+## Design
 
-```markdown
-# Product Requirements Document
+Warm off-white and near-black themes, modern grotesk interface typography, confident large headings, serif article body, a strong grid and thin separators. Restrained arrows and image hover motion respect reduced motion. Responsive across mobile, tablet and desktop; semantic headings, keyboard focus and 44px controls.
 
-## 1. Product Summary
-[Concise description of the product]
+## Content and integrations
 
-## 2. Problem / Objective
-[What problem are we solving? What is the objective?]
+No CMS, authentication, analytics, forms or database in the initial release. A typed article adapter isolates filesystem content from the UI so a CMS can replace the loader later. Public visitors have read access only; publishing happens through trusted repository edits.
 
-## 3. Target Users
-[Who is this product for? Primary and secondary user groups]
+## Out of scope
 
-## 4. User Roles
-[Defined user roles in the system]
+Separate About, Projects, Experience, Services, Contact, Ventures or Portfolio pages; career history, case studies, metrics, testimonials, categories and elaborate animation.
 
-## 5. Roles and Permissions
-[Permission matrix by role]
+## Confirmed decisions and outstanding assets
 
-## 6. Core User Journeys
-[Main user workflows and journeys]
+- The project-root PNG supplied by the user is the primary logo.
+- Contact information remains placeholder text until confirmed URLs and email are supplied.
+- The user requested replacing the three preview samples with a first-person post about embracing AI and beginning to agentify workflows. The initial article is dated 2026-10-04 and is available in local preview and production builds.
+- A temporary Singapore photograph occupies the portrait position. The user authorized deploying the current site; a personal portrait can replace this image later.
+- The article was drafted from the user’s stated direction; it avoids invented past experiences, tools, metrics and outcomes.
 
-## 7. Functional Requirements
-[Feature requirements with stable IDs]
+## Acceptance and release criteria
 
-## 8. Business Rules
-[Business logic rules and constraints]
-
-## 9. Data Requirements
-[Data model and storage requirements]
-
-## 10. Integrations
-[External systems and integrations]
-
-## 11. UI / UX Requirements
-[User interface and experience requirements]
-
-## 12. Non-Functional Requirements
-[Performance, scalability, availability requirements]
-
-## 13. Security Requirements
-[Security specifications and constraints]
-
-## 14. Edge Cases
-[Edge cases and how they should be handled]
-
-## 15. Out of Scope
-[Explicitly excluded features and capabilities]
-
-## 16. Acceptance Criteria
-[Testable acceptance criteria]
-
-## 17. Assumptions
-[Assumptions made during requirements gathering]
-
-## 18. Open Questions
-[Unresolved questions requiring clarification]
-
-## 19. Release Criteria
-[Definition of done for release]
-```
-
-## Requirement ID Format
-
-Use stable identifiers for traceability:
-
-```
-AUTH-001  — Authentication requirement
-USER-004  — User management requirement
-DATA-003  — Data requirement
-PAY-007   — Payment requirement
-SEC-005   — Security requirement
-UI-012    — UI/UX requirement
-API-003   — API requirement
-INT-002   — Integration requirement
-```
-
-Format: `[DOMAIN]-[NUMBER]`
-
-## Current State
-
-This is an uninitialized template. Replace this document with project requirements when starting a new project.
+Homepage → archive → article → archive works on desktop and mobile. Theme persists after reload. Invalid articles return 404. No horizontal overflow at 375, 430, 768, 1024, 1440 or 1728px. RSS and sitemap contain published content only. Production does not expose sample articles or developer documentation. Run unit tests, typecheck, lint, production build, browser tests and dependency audit. Do not push with unresolved blocking findings.
