@@ -9,6 +9,7 @@
 - Labeled development sample articles and contact placeholders.
 
 ### Changed
+- Published through GitHub and Vercel, connected Cloudflare DNS for wneoh.com, and configured a permanent www-to-apex redirect while preserving mail records.
 - Replaced the three sample posts with “I’m beginning to agentify my workflows,” dated 4 October 2026, on the homepage, archive, article route, RSS and sitemap.
 - Updated preview and production reader tests for the first real article.
 - Added a wide editorial feature layout when the homepage has a single published article.

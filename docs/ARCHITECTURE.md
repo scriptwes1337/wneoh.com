@@ -9,3 +9,5 @@ Content lives in `content/writing/*.md`. Slugs are validated and matched against
 Assets are local under `public/images/` and use responsive Next Image sizing. The original supplied logo remains untouched in the project root and is copied into public assets. Open Graph output embeds this mark using next/og.
 
 The theme boot script applies saved or system preference before rendering, preventing a theme flash. It contains no untrusted input. Storage denial does not disable the toggle. Developer documentation at `/dev` is accessible locally but returns 404 in production. Guards run in both layouts and individual pages before content reads, preventing child content from being serialized into Next.js response payloads.
+
+GitHub `main` deploys to Vercel project `wneoh-com` in `scriptwes-projects`. Cloudflare manages DNS-only apex/www CNAME records targeting Vercel's recommended hostname. Cloudflare flattens the apex; Vercel provides TLS and a permanent www-to-apex redirect. Existing iCloud mail records are independent of the web records and remain unchanged.

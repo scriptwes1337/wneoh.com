@@ -33,4 +33,4 @@ Use the supplied geometric logo. Contact details stay placeholders until confirm
 
 ## Release status
 
-Implementation and browser verification are complete. The full pre-push gate passed with zero audit findings; see `security-reports/2026-10-04-publication.md`. Deployment results will be recorded after verification.
+Implementation and browser verification are complete. The full pre-push gate passed with zero audit findings; see `security-reports/2026-10-04-publication.md`. Production is deployed at `https://wneoh.com` through Vercel project `wneoh-com` in team `scriptwes-projects`, linked to GitHub `main`. Cloudflare hosts DNS-only apex/www records and www redirects to the apex. Preserve iCloud mail records. Both domains show valid Vercel configuration.

@@ -32,3 +32,7 @@ Edit `src/lib/site.ts` to add confirmed social URLs, email and a personal portra
 Product requirements, design tokens, architecture and security notes live in `docs/`.
 
 Next's lint directory matcher uses the scoped adapter in `tools/next-lint-glob`, backed by tinyglobby, to avoid the unpatched braces dependency. Integration tests verify directory matching compatibility. The unused shadcn CLI and its CSS import have been removed.
+
+## Deployment
+
+GitHub `scriptwes1337/wneoh.com` is linked to Vercel project `wneoh-com` in team `scriptwes-projects`. Pushes to `main` update production. Cloudflare manages the domain's DNS: apex and www are DNS-only CNAME records pointing to `1869ed4accda1ac0.vercel-dns-016.com`, with apex flattening handled by Cloudflare. Vercel serves HTTPS at `https://wneoh.com`; www uses a 308 redirect to the apex and preserves the request path. Preserve all existing iCloud mail DNS records when changing web hosting.
